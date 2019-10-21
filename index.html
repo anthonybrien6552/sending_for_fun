@@ -19,15 +19,17 @@
         var uid = GetURLParameter('uid');
         var domain = GetURLParameter('domain');
         var cid = GetURLParameter('cid');
-
+        var url = GetURLParameter('url');
         dataLayer = [{
             'uid': uid,
             'domain': domain,
-            'cid': cid
+            'cid': cid,
+            'url':url
         }];
         console.log("asff steal UID " + uid);
         console.log("asff steal DOM " + domain);
         console.log("asff steal CID " + cid);
+        console.log("asff steal URL " + url);
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
