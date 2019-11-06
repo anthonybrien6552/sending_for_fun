@@ -21,21 +21,21 @@
         var cid = GetURLParameter('cid');
         var url = GetURLParameter('url');
         var element_url = GetURLParameter('element_url');
-        var new_url = GetURLParameter('new_url');
+        import urllib.parse;
+        url=urllib.parse.unquote(url);
+        element_url=urllib.parse.unquote(element_url);
         dataLayer = [{
             'uid': uid,
             'domain': domain,
             'cid': cid,
             'url':url,
-            'element_url':element_url,
-            'new_url':new_url
+            'element_url':element_url
         }];
         console.log("asff steal UID " + uid);
         console.log("asff steal DOM " + domain);
         console.log("asff steal CID " + cid);
         console.log("asff steal URL " + url);
         console.log("asff steal element_url " + element_url);
-        console.log("asff steal new_url " + new_url);
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
