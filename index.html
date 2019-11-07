@@ -21,8 +21,8 @@
         var cid = GetURLParameter('cid');
         var url = GetURLParameter('url');
         var element_url = GetURLParameter('element_url');
-        url=decodeURI(url);
-        element_url=decodeURI(element_url);
+        url=decodeURIComponent(url);
+        element_url=decodeURIComponent(element_url);
         dataLayer = [{
             'uid': uid,
             'domain': domain,
