@@ -23,12 +23,33 @@
         var element_url = GetURLParameter('element_url');
         url=decodeURIComponent(url);
         element_url=decodeURIComponent(element_url);
+
+        function CombinetwoURLs(url, element_url){
+            var finalURL = ""
+            if (url!=""){
+                if (element_url!="-1"){
+                    if (element_url!=""){
+                        finalURL = element_url;
+                    }
+                }
+                else{
+                    finalURL = url;
+                }
+            }else{
+                if (element_url!="-1"){
+                    finalURL = element_url;
+                }
+            }
+            return finalURL;
+        }
+
         dataLayer = [{
             'uid': uid,
             'domain': domain,
             'cid': cid,
             'url':url,
-            'element_url':element_url
+            'element_url':element_url,
+            'finalURL':finalURL
         }];
         console.log("asff steal param "+window.location.search.substring(1));
         console.log("asff steal UID " + uid);
@@ -36,6 +57,7 @@
         console.log("asff steal CID " + cid);
         console.log("asff steal URL " + url);
         console.log("asff steal element_url " + element_url);
+        console.log("asff steal finalURL " + finalURL);
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
