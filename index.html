@@ -23,25 +23,24 @@
         var element_url = GetURLParameter('element_url');
         url=decodeURIComponent(url);
         element_url=decodeURIComponent(element_url);
-
+        
         function CombinetwoURLs(url, element_url){
-            var finalURL = ""
-            if (url!=""){
-                if (element_url!="-1"){
-                    if (element_url!=""){
-                        finalURL = element_url;
-                    }
-                }
-                else{
-                    finalURL = url;
-                }
-            }else{
-                if (element_url!="-1"){
-                    finalURL = element_url;
-                }
+            fURL = "undefined"
+            if(element_url == "-1"){
+                element_url="";
+            }            
+            if(element_url!="" && element_url!="undefined"){
+                fURL=element_url;
             }
-            return finalURL;
+            else{
+                fURL=url;
+            }
+            if (fURL==""){
+                fURL="undefined"
+            }
+            return fURL;
         }
+        var finalURL = CombinetwoURLs(url, element_url)
 
         dataLayer = [{
             'uid': uid,
